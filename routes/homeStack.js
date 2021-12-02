@@ -15,6 +15,9 @@ import Token from '../pages/autToken'
 import comingSoon from '../pages/comingSoon'
 import Artikel from '../pages/artikel'
 import news from '../pages/news'
+import ResepNew from '../pages/ResepNew'
+import RecipeDetail from '../pages/RecipeDetail'
+import RecipeStep from '../pages/RecipeStep'
 
 const Stack = createNativeStackNavigator();
 
@@ -111,7 +114,7 @@ export default function homeStack() {
                     options={({navigation}) =>  {
                         return{
                             headerBackVisible: false,
-                            headerTitle: () => <Header navigation={navigation} title='Artikel'/>,
+                            headerTitle: () => <Header navigation={navigation} title='Article'/>,
                         }
                     }}
                 />
@@ -131,6 +134,28 @@ export default function homeStack() {
                         name="news"
                         component={news}
                         options={{title: 'news', headerTitleAlign: 'center'}}
+                    />
+                <Stack.Screen
+                        name="resepList1"
+                        component={ResepNew}
+                        options={({navigation}) =>  {
+                            return{
+                                headerBackVisible: false,
+                                headerTitle: () => <Header navigation={navigation} title='Recipe List'/>,
+                            }
+                        }}
+                    />
+
+                <Stack.Screen
+                        name="RecipeDetail"
+                        component={RecipeDetail}
+                        options={{title: 'Recipe Detail', headerTitleAlign: 'center'}}
+                    />
+
+                <Stack.Screen
+                        name="RecipeStep"
+                        component={RecipeStep}
+                        options={{title: 'Recipe Step', headerTitleAlign: 'center'}}
                     />
 
             </Stack.Navigator>

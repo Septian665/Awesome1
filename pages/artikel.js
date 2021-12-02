@@ -77,7 +77,7 @@ export default function Artikel({navigation}){
             style={styles.imageView}
             />
             <View style={{flex:1, flexDirection:'column'}}>
-            <Text style={styles.textStyle}>{item.id}</Text>
+            {/* <Text style={styles.textStyle}>{item.id}</Text> */}
             <Text style={styles.textStyle}>{item.title}</Text>
             <Text style={styles.textStyle}>{item.content.substring(0, 159)}.....</Text>
             </View>
@@ -152,8 +152,9 @@ export default function Artikel({navigation}){
        <TextInput
           onChangeText={(text) => searchFilterFunction(text)}
           value={search}
-          underlineColorAndroid="transparent"
           placeholder="Search Here"
+          style={styles.FontSearch}
+          placeholderTextColor="black"
         />
         <FlatList
           data={dataSource}
@@ -218,6 +219,16 @@ textStyle: {
   fontSize: 15,
   textAlign: 'justify',
 },
+
+FontSearch: {
+  marginTop: 5,
+  marginRight: 5,
+  marginLeft: 5,
+  borderRadius: 12,
+  borderWidth: 1,
+  fontSize: 20,
+  color: 'black',
+}
 });
 // import React ,{useState,useEffect} from 'react';
 // import { StyleSheet, FlatList, Image, SafeAreaView, TextInput,Text, TouchableOpacity, View, ActivityIndicator } from 'react-native';

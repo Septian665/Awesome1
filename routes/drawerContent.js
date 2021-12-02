@@ -22,6 +22,18 @@ export default function drawerContent(props) {
         }
       
     }
+    const cekTokenResepNew = async () => {
+        const token = await AsyncStorage.getItem('access_token')
+        if(token) {
+            props.navigation.navigate("resepList1")
+            // console.log('di menu artikel')
+        } else {
+            // props.navigation.navigate("cekTokenArtikel")
+            props.navigation.navigate('comingSoon23')
+            // console.log('di menu comming soon')
+        }
+      
+    }
 
     return (
         <View style={{flex: 1}}>
@@ -33,7 +45,11 @@ export default function drawerContent(props) {
                             onPress={() => props.navigation.navigate('Home')}
                         />
                         <DrawerItem
-                            label="Artikel"
+                            label="Recipe List"
+                            onPress={() => cekTokenResepNew()}
+                        />
+                        <DrawerItem
+                            label="Article"
                             onPress={() => cekTokenArtikel()}
                         />
                     </Drawer.Section>
